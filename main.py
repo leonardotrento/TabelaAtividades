@@ -18,8 +18,9 @@ def cadastro():
     elif request.method == 'POST':
         nome = request.form['nomeForm']
         tarefa = request.form['tarefaForm']
+        data = request.form['dataForm']
         
-        nova_tarefa = Atividade(nome=nome, tarefa=tarefa)
+        nova_tarefa = Atividade(nome=nome, tarefa=tarefa, data=data)
         db.session.add(nova_tarefa)
         db.session.commit()
         return redirect(url_for('home'))
