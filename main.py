@@ -9,7 +9,7 @@ db.init_app(app)
 @app.route('/')
 def home():
     registros = db.session.query(Atividade).all()
-    return render_template('home.html', registros=registros)
+    return render_template('index.html', registros=registros)
 
 @app.route('/cadastrar', methods=['GET', 'POST'])
 def cadastro():
